@@ -26,7 +26,7 @@ def generate_commit(dir, startcdata):
 
     commit_date = captured_date
     for file in captured_files:
-        commit_date = commit_date + timedelta(days=random.randint(0,1))
+        commit_date = commit_date + timedelta(days=random.randint(0,4))
         print(str(commit_date)[:10])
         print(os.path.basename(file))
         os.system('git add ' + file + ' && git commit -m \'' + random.choice(commit_msg) + ' the file ' + os.path.basename(file) + ' \' --date ' + str(commit_date)[:10])
